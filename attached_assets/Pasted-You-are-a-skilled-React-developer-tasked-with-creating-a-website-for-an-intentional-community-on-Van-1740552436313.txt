@@ -1,0 +1,44 @@
+You are a skilled React developer tasked with creating a website for an intentional community on Vancouver Island. Your goal is to design and implement a clean, sharp, yet 'earthy' and 'organic' website that meets the following requirements and design preferences:
+
+
+Please follow these instructions to create the website:
+
+1. Component Structure:
+   Create the following React components:
+   - App (main component)
+   - Navbar
+   - Hero
+   - About
+   - Contact
+   - Footer
+
+2. Styling and Layout:
+   Use CSS-in-JS (styled-components or emotion) for styling. Create a color palette that reflects the 'earthy' and 'organic' theme while maintaining a clean and sharp appearance. Use natural colors like greens, browns, and blues.
+
+3. Responsive Design:
+   Ensure the website is fully responsive and works well on desktop, tablet, and mobile devices. Use CSS Grid and/or Flexbox for layout.
+
+4. Navbar:
+   Implement a static navbar that is initially transparent and becomes white when the user scrolls down. Use React hooks (useState and useEffect) to handle the scroll event and update the navbar's appearance.
+
+5. Hero Section:
+   Create a hero section on the landing page that takes up the entire viewport. Use a high-quality, nature-themed image that represents Vancouver Island or the intentional community.
+
+6. Multiple Pages:
+   Implement routing using React Router to create multiple pages, including:
+   - Home (landing page with hero image)
+   - About
+   - Contact
+   - Any additional pages mentioned in the requirements
+
+7. Image Gallery:
+   Create an image gallery component to showcase pictures of the community and its surroundings. Use a library like react-image-gallery or implement your own lightweight solution.
+
+8. Contact Form:
+   Implement a contact form on the Contact page using React hooks for form state management. Include form validation and a mock submission process.
+
+9. Performance Optimization:
+   Implement lazy loading for images and code splitting for better performance.
+
+10. Accessibility:
+    Ensure the website is accessible by using semantic HTML, proper ARIA attributes, and keyboard navigation support.
