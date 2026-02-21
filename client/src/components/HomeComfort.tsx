@@ -1,27 +1,27 @@
 import { motion } from "framer-motion";
-import { Tent, UtensilsCrossed, Compass, TreePine } from "lucide-react";
+import { Tent, UtensilsCrossed, Sunrise, TreePine } from "lucide-react";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const FEATURES = [
   {
     icon: Tent,
     title: "Campsite & Grounds",
-    body: "Established tent platforms nestled among old-growth cedars, with fire circles and gathering clearings throughout the property.",
+    body: "Private camp sites in established, well-maintained tent platforms nestled among towering old-growth cedars.",
   },
   {
     icon: UtensilsCrossed,
     title: "Catered Meals",
-    body: "Farm-to-table meals sourced locally from Salt Spring Island's renowned farms and artisan producers. We handle the kitchen so you can focus on your program.",
+    body: "Farm-to-table meals sourced locally from Salt Spring Island's renowned farms and artisan producers.",
   },
   {
-    icon: Compass,
-    title: "Practice & Gathering Space",
-    body: "Dedicated outdoor and sheltered spaces for yoga, meditation, breathwork, workshops, or whatever your retreat calls for.",
+    icon: Sunrise,
+    title: "Morning Yoga",
+    body: "Start the day grounded with optional sunrise yoga, guided by experienced instructors amidst the trees and fresh mountain air.",
   },
   {
     icon: TreePine,
     title: "Guided Land Experiences",
-    body: "Forest bathing, nature walks, garden tours, and permaculture sessions available as add-ons to complement your programming.",
+    body: "From forest bathing to challenging hikes, our guided outdoor experiences are tailored to your group's goals and interests.",
   },
 ];
 
@@ -60,14 +60,14 @@ const HomeComfort = () => (
           <motion.div
             key={feature.title}
             variants={fadeInUp}
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="bg-white dark:bg-ent-bg-dark rounded-2xl p-7 shadow-soft border border-ent-primary/10 dark:border-white/5 flex flex-col gap-4"
+            whileHover={{ y: -6 }}
+            transition={{ type: "spring", stiffness: 260, damping: 22 }}
+            className="bg-white dark:bg-ent-bg-dark rounded-2xl p-8 shadow-soft border border-ent-primary/10 dark:border-white/5 flex flex-col gap-5"
           >
-            <div className="w-11 h-11 rounded-xl bg-ent-primary/10 dark:bg-ent-primary/20 flex items-center justify-center text-ent-primary dark:text-ent-sage">
+            <div className="w-12 h-12 rounded-full bg-ent-primary/10 dark:bg-ent-primary/20 flex items-center justify-center text-ent-primary dark:text-ent-sage">
               <feature.icon size={22} />
             </div>
-            <h3 className="font-display text-lg text-ent-text dark:text-ent-text-dark">
+            <h3 className="font-display text-2xl text-ent-text dark:text-ent-text-dark leading-snug">
               {feature.title}
             </h3>
             <p className="text-ent-text-muted dark:text-ent-text-muted-dark font-body text-sm leading-relaxed">

@@ -7,7 +7,7 @@ const HomeLandscape = () => (
   >
     <div className="absolute inset-0">
       <img
-        src="/images/gallery/rainbow_over_trees.jpg"
+        src="/images/gallery/sunny_mossy_forest_clearing.jpg"
         alt="Forested landscape at Wilderness Confluence Centre"
         className="w-full h-full object-cover"
       />
