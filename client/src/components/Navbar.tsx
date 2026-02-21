@@ -37,7 +37,7 @@ const Navbar = () => {
   };
 
   const navLinkClass =
-    "font-body text-sm font-medium text-white/70 hover:text-white transition-colors cursor-pointer";
+    "font-body text-base font-medium text-white/70 hover:text-white transition-colors cursor-pointer";
 
   return (
     <>
@@ -83,7 +83,7 @@ const Navbar = () => {
             <DarkModeToggle />
             <Link
               href="/contact"
-              className="bg-ent-secondary hover:bg-ent-secondary/90 text-white font-bold text-sm py-2.5 px-5 rounded-xl transition-colors no-underline"
+              className="bg-ent-secondary hover:bg-ent-secondary/90 text-white font-bold text-base py-2.5 px-5 rounded-xl transition-colors no-underline"
             >
               Contact
             </Link>

@@ -8,7 +8,7 @@ const DarkModeToggle: React.FC = () => {
   return (
     <button
       onClick={toggleDarkMode}
-      className="p-2 md:pb-3 md:border-b-2 border-transparent rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-colors md:-translate-y-[2px]"
+      className="p-2 border-transparent rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-colors md:-translate-y-[2px]"
       aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
       title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
     >

@@ -29,6 +29,18 @@ export default {
         "ent-text-muted": "#5C6B64",
         "ent-text-muted-dark": "#A3B0AA",
         "ent-forest-dark": "#2D4739",
+
+        // ── Style guide name aliases ─────────────────────────────────────
+        // Shorthand tokens matching the names in the design system reference.
+        // These are additive — the ent-* names above still work.
+        "moss":         "#2C3A33", // Deep Moss  (= ent-surface-dark / ent-text)
+        "terracotta":   "#A65D43", // Terracotta (= ent-secondary)
+        "cream":        "#F4F0E6", // Cream      (= ent-cream / ent-surface-light)
+        "warm-white":   "#FDFBF7", // Warm White (= ent-bg-light)
+        "night-forest": "#1F2923", // Night Forest (= ent-bg-dark)
+        "pale-bone":    "#E8E6E1", // Pale Bone  (= ent-text-dark)
+        "muted-green":  "#5C6B64", // Muted Green (= ent-text-muted)
+
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

@@ -19,6 +19,7 @@ function ScrollToTopOnNavigate() {
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const GalleryPage = lazy(() => import("./pages/GalleryPage"));
+const StyleGuidePage = lazy(() => import("./pages/StyleGuidePage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 function Router() {
@@ -36,6 +37,7 @@ function Router() {
         <Route path="/" component={HomePage} />
         <Route path="/gallery" component={GalleryPage} />
         <Route path="/contact" component={ContactPage} />
+        <Route path="/style-guide" component={StyleGuidePage} />
         <Route component={NotFoundPage} />
       </Switch>
       <Footer />
