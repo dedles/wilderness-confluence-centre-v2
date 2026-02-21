@@ -3,8 +3,8 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const ADDONS = [
   "Guided Meditation",
-  "Forest Bathing",
-  "Stargazing",
+  // "Forest Bathing",
+  // "Stargazing",
   "Live Acoustic Music",
   "Evening Campfire",
   "Permaculture Tour",

@@ -43,7 +43,7 @@ const Navbar = () => {
     <>
       <nav
         className={`fixed w-full z-50 transition-all duration-300 ${
-          scrolled
+          scrolled || location !== "/"
             ? "bg-ent-surface-dark/95 backdrop-blur-md py-3 shadow-md"
             : "bg-transparent py-5"
         }`}
