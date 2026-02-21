@@ -42,7 +42,7 @@ const Footer = () => {
               A retreat venue rooted in intentional community on Salt Spring Island, British Columbia.
               An offering of Entelechy.
             </p>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <a
                 href="#"
                 aria-label="Instagram"
@@ -57,7 +57,7 @@ const Footer = () => {
               >
                 <Facebook size={20} />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Explore */}
@@ -98,37 +98,13 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 text-sm text-white/50">
               <li>Salt Spring Island, BC, Canada</li>
-              <li>
-                <a
-                  href="mailto:info@wildernessconfluence.ca"
-                  className="hover:text-white transition-colors"
-                >
-                  info@wildernessconfluence.ca
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+12505551234"
-                  className="hover:text-white transition-colors"
-                >
-                  +1 (250) 555-1234
-                </a>
-              </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30">
+        <div className="text-xs text-white/30 text-center">
           <p>&copy; {new Date().getFullYear()} Wilderness Confluence Centre. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white/60 transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-white/60 transition-colors">
-              Terms of Service
-            </a>
-          </div>
         </div>
       </div>
     </footer>

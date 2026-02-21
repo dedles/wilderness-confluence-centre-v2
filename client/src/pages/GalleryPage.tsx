@@ -1,38 +1,85 @@
 import { useState, useEffect } from "react";
 import { ArrowDown, ChevronLeft, ChevronRight, X } from "lucide-react";
 import SEO from "../components/SEO";
-import { galleryImages } from "../lib/GalleryData";
+import { saltSpringImages, groundsImages, GalleryImage } from "../lib/GalleryData";
+
+type ActiveGallery = "grounds" | "saltspring";
+
+interface LightboxState {
+  gallery: ActiveGallery;
+  index: number;
+}
+
+function GalleryGrid({
+  images,
+  onOpen,
+}: {
+  images: GalleryImage[];
+  onOpen: (index: number) => void;
+}) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-6 auto-rows-[300px]">
+      {images.map((image, index) => {
+        const isWide = index % 8 === 4;
+        return (
+          <div
+            key={index}
+            className={`relative group rounded-2xl overflow-hidden shadow-md cursor-pointer ${
+              isWide ? "md:col-span-2" : ""
+            }`}
+            onClick={() => onOpen(index)}
+          >
+            <img
+              src={image.src}
+              alt={image.caption}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ent-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <p className="text-white font-display text-base">{image.caption}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 export default function GalleryPage() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [lightbox, setLightbox] = useState<LightboxState | null>(null);
 
-  const openModal = (index: number) => {
-    setCurrentIndex(index);
-    setModalOpen(true);
+  const activeImages = lightbox?.gallery === "saltspring" ? saltSpringImages : groundsImages;
+
+  const openModal = (gallery: ActiveGallery, index: number) => {
+    setLightbox({ gallery, index });
     document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
-    setModalOpen(false);
+    setLightbox(null);
     document.body.style.overflow = "";
   };
 
   const prev = () =>
-    setCurrentIndex((i) => (i === 0 ? galleryImages.length - 1 : i - 1));
+    setLightbox((s) =>
+      s ? { ...s, index: s.index === 0 ? activeImages.length - 1 : s.index - 1 } : s
+    );
+
   const next = () =>
-    setCurrentIndex((i) => (i === galleryImages.length - 1 ? 0 : i + 1));
+    setLightbox((s) =>
+      s ? { ...s, index: s.index === activeImages.length - 1 ? 0 : s.index + 1 } : s
+    );
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (!modalOpen) return;
+      if (!lightbox) return;
       if (e.key === "ArrowLeft") prev();
       if (e.key === "ArrowRight") next();
       if (e.key === "Escape") closeModal();
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [modalOpen]);
+  }, [lightbox]);
 
   const scrollToGallery = () => {
     document.getElementById("gallery-grid")?.scrollIntoView({ behavior: "smooth" });
@@ -84,46 +131,38 @@ export default function GalleryPage() {
         </button>
       </section>
 
-      {/* Gallery Grid */}
-      <section
+      <div
         id="gallery-grid"
-        className="py-24 bg-ent-bg-light dark:bg-ent-bg-dark transition-colors"
+        className="bg-ent-bg-light dark:bg-ent-bg-dark transition-colors"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-ent-text-muted dark:text-ent-text-muted-dark text-lg font-body mb-12 max-w-2xl mx-auto">
-            Placeholder images — real venue photography coming soon.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-6 auto-rows-[300px]">
-            {galleryImages.map((image, index) => {
-              const isWide = index % 8 === 4;
-
-              return (
-                <div
-                  key={index}
-                  className={`relative group rounded-2xl overflow-hidden shadow-md cursor-pointer ${
-                    isWide ? "md:col-span-2" : ""
-                  }`}
-                  onClick={() => openModal(index)}
-                >
-                  <img
-                    alt={image.caption}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    src={image.src}
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ent-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                    <p className="text-white font-display text-base">{image.caption}</p>
-                  </div>
-                </div>
-              );
-            })}
+        {/* The Grounds */}
+        <section className="py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-display text-4xl md:text-5xl text-ent-text dark:text-ent-text-dark mb-12 text-center">
+              The Grounds of the Confluence Centre
+            </h2>
+            <GalleryGrid images={groundsImages} onOpen={(i) => openModal("grounds", i)} />
           </div>
+        </section>
+
+        {/* Divider */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <hr className="border-ent-primary/10 dark:border-white/10" />
         </div>
-      </section>
+
+        {/* Salt Spring */}
+        <section className="py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-display text-4xl md:text-5xl text-ent-text dark:text-ent-text-dark mb-12 text-center">
+              Salt Spring
+            </h2>
+            <GalleryGrid images={saltSpringImages} onOpen={(i) => openModal("saltspring", i)} />
+          </div>
+        </section>
+      </div>
 
       {/* Lightbox */}
-      {modalOpen && (
+      {lightbox && (
         <div
           className="fixed inset-0 bg-black/92 z-[1001] flex items-center justify-center"
           onClick={closeModal}
@@ -140,12 +179,12 @@ export default function GalleryPage() {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={galleryImages[currentIndex]?.src || ""}
-              alt={galleryImages[currentIndex]?.caption || ""}
+              src={activeImages[lightbox.index]?.src || ""}
+              alt={activeImages[lightbox.index]?.caption || ""}
               className="max-w-full max-h-full object-contain mx-auto block"
             />
             <div className="absolute bottom-5 left-0 w-full bg-black/70 text-white p-4 text-center font-body text-sm">
-              {galleryImages[currentIndex]?.caption || ""}
+              {activeImages[lightbox.index]?.caption || ""}
             </div>
             <div className="absolute top-1/2 w-full flex justify-between px-5 -translate-y-1/2 z-[1002]">
               <button

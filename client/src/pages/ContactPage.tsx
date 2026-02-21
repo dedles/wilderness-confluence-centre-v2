@@ -33,9 +33,9 @@ const ContactPage = () => {
       <section className="relative pt-32 pb-20 px-6 bg-ent-surface-dark overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/gallery/outdoor_garden.jpg"
-            alt="Forested retreat grounds"
-            className="w-full h-full object-cover opacity-20"
+            src="/images/gallery/fire_circle_benches_dusk.jpg"
+            alt="Fire circle at Wilderness Confluence Centre"
+            className="w-full h-full object-cover opacity-40"
           />
         </div>
         <div className="relative z-10 max-w-3xl mx-auto text-center">
@@ -83,24 +83,6 @@ const ContactPage = () => {
               </div>
             </div>
 
-            <div className="bg-ent-sage/20 dark:bg-ent-surface-dark rounded-2xl p-6 border border-ent-primary/10 dark:border-white/5">
-              <p className="font-body text-sm text-ent-text-muted dark:text-ent-text-muted-dark leading-relaxed">
-                Or reach us directly at{" "}
-                <a
-                  href="mailto:info@wildernessconfluence.ca"
-                  className="text-ent-primary dark:text-ent-sage font-medium hover:underline"
-                >
-                  info@wildernessconfluence.ca
-                </a>{" "}
-                or{" "}
-                <a
-                  href="tel:+12505551234"
-                  className="text-ent-primary dark:text-ent-sage font-medium hover:underline"
-                >
-                  +1 (250) 555-1234
-                </a>
-              </p>
-            </div>
           </div>
 
           {/* Form */}

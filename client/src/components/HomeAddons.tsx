@@ -6,7 +6,7 @@ const ADDONS = [
   "Forest Bathing",
   "Stargazing",
   "Live Acoustic Music",
-  "Photography Workshop",
+  "Evening Campfire",
   "Permaculture Tour",
   "Morning Yoga",
 ];
