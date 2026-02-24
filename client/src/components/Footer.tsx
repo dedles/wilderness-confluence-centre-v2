@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Instagram, Facebook, ArrowUp } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -15,6 +15,8 @@ const Footer = () => {
     }
   };
 
+  const linkClass = "hover:text-white transition-colors";
+
   return (
     <footer className="bg-ent-surface-dark text-white py-16 relative">
       {/* Back to top */}
@@ -29,62 +31,60 @@ const Footer = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 border-b border-white/10 pb-12">
-          {/* Brand */}
-          <div className="md:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 border-b border-white/10 pb-12">
+
+          {/* Col 1 — Brand */}
+          <div>
             <Link
               href="/"
               className="font-display text-xl font-semibold tracking-tight mb-5 block text-white no-underline hover:text-ent-sage transition-colors leading-tight"
             >
               Wilderness Confluence Centre
             </Link>
-            <p className="text-white/50 text-sm leading-relaxed mb-6">
+            <p className="text-white/50 text-sm leading-relaxed">
               A retreat venue rooted in intentional community on Salt Spring Island, British Columbia.
               An offering of Entelechy.
             </p>
-            {/* <div className="flex gap-4">
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="text-white/40 hover:text-white transition-colors"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="text-white/40 hover:text-white transition-colors"
-              >
-                <Facebook size={20} />
-              </a>
-            </div> */}
           </div>
 
-          {/* Explore */}
+          {/* Col 2 — Explore */}
           <div>
             <h4 className="font-bold text-white mb-5 uppercase text-xs tracking-widest font-body">
               Explore
             </h4>
             <ul className="space-y-3 text-sm text-white/50">
               <li>
-                <Link href="/about" className="hover:text-white transition-colors no-underline text-inherit">
-                  About Us
-                </Link>
+                <Link href="/about" className={`${linkClass} no-underline text-inherit`}>About Us</Link>
               </li>
               <li>
-                <button onClick={() => handleSectionLink("packages")} className="hover:text-white transition-colors text-left">
+                <Link href="/gallery" className={`${linkClass} no-underline text-inherit`}>Gallery</Link>
+              </li>
+              <li>
+                <button onClick={() => handleSectionLink("packages")} className={`${linkClass} text-left`}>
                   Packages
                 </button>
-              </li>
-              <li>
-                <Link href="/gallery" className="hover:text-white transition-colors no-underline text-inherit">
-                  Gallery
-                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Col 3 — Entelechy (no title) */}
+          <div>
+            <div className="mb-5 h-[1.125rem]" />
+            <ul className="space-y-3 text-sm text-white/50">
+              <li>
+                <a
+                  href="https://www.entelechysaltspring.ca/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                >
+                  Entelechy Ecovillage
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 4 — Contact */}
           <div>
             <h4 className="font-bold text-white mb-5 uppercase text-xs tracking-widest font-body">
               Contact
@@ -92,12 +92,13 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-white/50">
               <li>Salt Spring Island, BC, Canada</li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors no-underline text-inherit">
+                <Link href="/contact" className={`${linkClass} no-underline text-inherit`}>
                   Plan Your Retreat
                 </Link>
               </li>
             </ul>
           </div>
+
         </div>
 
         {/* Bottom bar */}
