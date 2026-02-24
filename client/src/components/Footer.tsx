@@ -66,25 +66,18 @@ const Footer = () => {
               Explore
             </h4>
             <ul className="space-y-3 text-sm text-white/50">
-              {[
-                { label: "The Experience", sectionId: "experience" },
-                { label: "Packages", sectionId: "packages" },
-                { label: "The Land", sectionId: "the-land" },
-              ].map((item) => (
-                <li key={item.sectionId}>
-                  <button
-                    onClick={() => handleSectionLink(item.sectionId)}
-                    className="hover:text-white transition-colors text-left"
-                  >
-                    {item.label}
-                  </button>
-                </li>
-              ))}
               <li>
-                <Link
-                  href="/gallery"
-                  className="hover:text-white transition-colors no-underline text-inherit"
-                >
+                <Link href="/about" className="hover:text-white transition-colors no-underline text-inherit">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <button onClick={() => handleSectionLink("packages")} className="hover:text-white transition-colors text-left">
+                  Packages
+                </button>
+              </li>
+              <li>
+                <Link href="/gallery" className="hover:text-white transition-colors no-underline text-inherit">
                   Gallery
                 </Link>
               </li>
@@ -98,6 +91,11 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 text-sm text-white/50">
               <li>Salt Spring Island, BC, Canada</li>
+              <li>
+                <Link href="/contact" className="hover:text-white transition-colors no-underline text-inherit">
+                  Plan Your Retreat
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

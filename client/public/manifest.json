@@ -1,19 +1,19 @@
 {
-  "name": "Entelechy Intentional Community",
-  "short_name": "Entelechy",
-  "description": "Sustainable intentional community on Salt Spring Island, BC focused on conscious living and personal growth",
+  "name": "Wilderness Confluence Centre",
+  "short_name": "Confluence",
+  "description": "A forested retreat venue on Salt Spring Island, BC for facilitators, retreat leaders, and corporate teams.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#3a7563",
+  "background_color": "#FDFBF7",
+  "theme_color": "#2C3A33",
   "icons": [
     {
-      "src": "/favicon-192x192.png",
+      "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/favicon-512x512.png",
+      "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

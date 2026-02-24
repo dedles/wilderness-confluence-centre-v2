@@ -37,12 +37,6 @@ const HomeHowItWorks = () => (
         viewport={{ once: true, margin: "-80px" }}
         className="text-center mb-16"
       >
-        <motion.p
-          variants={fadeInUp}
-          className="text-sm uppercase tracking-widest text-ent-secondary font-bold mb-3"
-        >
-          Process
-        </motion.p>
         <motion.h2
           variants={fadeInUp}
           className="font-display text-4xl md:text-5xl text-ent-text dark:text-ent-text-dark"

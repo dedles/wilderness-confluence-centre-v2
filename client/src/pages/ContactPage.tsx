@@ -19,7 +19,7 @@ const labelClass =
   "block text-sm font-bold mb-2 text-ent-text dark:text-ent-text-dark font-body";
 
 const ContactPage = () => {
-  const [formState, handleSubmit] = useForm("xyzformid");
+  const [formState, handleSubmit] = useForm("mdalpvye");
 
   return (
     <>
@@ -83,8 +83,7 @@ const ContactPage = () => {
                         <SelectContent>
                           <SelectItem value="under-10">Under 10</SelectItem>
                           <SelectItem value="10-20">10–20</SelectItem>
-                          <SelectItem value="20-30">20–30</SelectItem>
-                          <SelectItem value="30-plus">30+</SelectItem>
+                          <SelectItem value="20-30">20+</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>

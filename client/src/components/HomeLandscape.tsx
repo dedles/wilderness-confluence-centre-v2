@@ -17,12 +17,9 @@ const HomeLandscape = () => (
       transition={{ duration: 0.8 }}
       className="relative z-10 max-w-4xl mx-auto text-center px-6"
     >
-      <h2 className="font-display text-4xl md:text-6xl text-cream mb-6 leading-tight">
+      <h2 className="font-display text-4xl md:text-6xl text-cream leading-tight">
         Fourteen Acres of Forest, Meadow, and Quiet
       </h2>
-      <p className="text-ent-sage text-lg md:text-xl font-light">
-        Discover a world of experience.
-      </p>
     </motion.div>
   </section>
 );

@@ -32,8 +32,8 @@ const HomeDifferentVenue = () => (
         >
           <p>
             Most retreat venues feel like hotels with a yoga room bolted on. Confluence is
-            different. We're an intentional community on 14 acres of forested land — cedar
-            groves, meadows, gardens, fire circles, and gathering spaces built by the people
+            different. We're an intentional community on 14 acres of forested land — mossy
+            bluffs, meadows, gardens, fire circles, and gathering spaces built by the people
             who live here.
           </p>
           <p>

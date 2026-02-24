@@ -6,7 +6,7 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 const PACKAGES = [
   {
     name: "The Intimate",
-    capacity: "Up to 5",
+    capacity: "Up to 10",
     tagline: "For small circles, private intensives, and focused group work.",
     price: "$500",
     pricePer: "/day",
@@ -15,7 +15,7 @@ const PACKAGES = [
       "Up to 5 participants",
       "Dedicated campsite zone",
       "Fire circle access",
-      "Communal meals",
+      "Kitchen access",
       "Gathering space",
     ],
     upsell: null,
@@ -32,8 +32,7 @@ const PACKAGES = [
     features: [
       "Up to 20 participants",
       "Expanded camp + meadow access",
-      "Full catering package",
-      "Dedicated gathering lodge",
+      "On-site catering",
       "Facilitator support",
       "On-site host",
     ],
@@ -44,15 +43,14 @@ const PACKAGES = [
   },
   {
     name: "The Confluence",
-    capacity: "20–30+",
+    capacity: "20+",
     tagline: "For large retreats, festivals, multi-track programs, and corporate gatherings.",
-    price: "$5,000",
+    price: "$4,800",
     pricePer: "/day",
     priceNote: "Custom pricing for larger groups.",
     features: [
-      "30+ participants",
-      "Full property access",
-      "Full premium catering",
+      "20+ participants",
+      "Premium catering",
       "Event planning support",
       "Custom itineraries",
     ],
@@ -100,17 +98,15 @@ const HomePackages = () => (
           <motion.div
             key={pkg.name}
             variants={fadeInUp}
-            className={`rounded-3xl p-8 flex flex-col gap-5 relative ${
-              pkg.featured
-                ? "bg-ent-surface-dark text-white shadow-xl md:-mt-4 md:-mb-4"
-                : "bg-white dark:bg-ent-surface-dark shadow-soft"
-            }`}
+            className={`rounded-3xl p-8 flex flex-col gap-5 relative ${pkg.featured
+              ? "bg-ent-surface-dark text-white shadow-xl md:-mt-4 md:-mb-4"
+              : "bg-white dark:bg-ent-surface-dark shadow-soft"
+              }`}
           >
             {/* Capacity + badge */}
             <div className="flex items-center justify-between">
-              <p className={`text-xs font-bold uppercase tracking-widest ${
-                pkg.featured ? "text-white/50" : "text-ent-secondary"
-              }`}>
+              <p className={`text-xs font-bold uppercase tracking-widest ${pkg.featured ? "text-white/50" : "text-ent-secondary"
+                }`}>
                 {pkg.capacity}
               </p>
               {pkg.badge && (
@@ -122,14 +118,12 @@ const HomePackages = () => (
 
             {/* Name + tagline */}
             <div>
-              <h3 className={`font-display text-3xl mb-2 leading-tight ${
-                pkg.featured ? "text-white" : "text-ent-text dark:text-ent-text-dark"
-              }`}>
+              <h3 className={`font-display text-3xl mb-2 leading-tight ${pkg.featured ? "text-white" : "text-ent-text dark:text-ent-text-dark"
+                }`}>
                 {pkg.name}
               </h3>
-              <p className={`text-sm font-body leading-relaxed ${
-                pkg.featured ? "text-white/60" : "text-ent-text-muted dark:text-ent-text-muted-dark"
-              }`}>
+              <p className={`text-sm font-body leading-relaxed ${pkg.featured ? "text-white/60" : "text-ent-text-muted dark:text-ent-text-muted-dark"
+                }`}>
                 {pkg.tagline}
               </p>
             </div>
@@ -137,20 +131,17 @@ const HomePackages = () => (
             {/* Price */}
             <div>
               <div className="flex items-baseline gap-1">
-                <span className={`font-display text-4xl font-bold ${
-                  pkg.featured ? "text-white" : "text-ent-primary dark:text-ent-sage"
-                }`}>
+                <span className={`font-display text-4xl font-bold ${pkg.featured ? "text-white" : "text-ent-primary dark:text-ent-sage"
+                  }`}>
                   From {pkg.price}
                 </span>
-                <span className={`text-sm font-body ${
-                  pkg.featured ? "text-white/50" : "text-ent-text-muted"
-                }`}>
+                <span className={`text-sm font-body ${pkg.featured ? "text-white/50" : "text-ent-text-muted"
+                  }`}>
                   {pkg.pricePer}
                 </span>
               </div>
-              <p className={`text-xs mt-1 font-body ${
-                pkg.featured ? "text-white/40" : "text-ent-text-muted/70 dark:text-ent-text-muted-dark/70"
-              }`}>
+              <p className={`text-xs mt-1 font-body ${pkg.featured ? "text-white/40" : "text-ent-text-muted/70 dark:text-ent-text-muted-dark/70"
+                }`}>
                 {pkg.priceNote}
               </p>
             </div>
@@ -169,13 +160,11 @@ const HomePackages = () => (
                 <li key={f} className="flex items-center gap-3">
                   <CheckCircle2
                     size={17}
-                    className={`shrink-0 ${
-                      pkg.featured ? "text-ent-sage" : "text-ent-primary dark:text-ent-sage"
-                    }`}
+                    className={`shrink-0 ${pkg.featured ? "text-ent-sage" : "text-ent-primary dark:text-ent-sage"
+                      }`}
                   />
-                  <span className={`text-sm font-body ${
-                    pkg.featured ? "text-white/80" : "text-ent-text-muted dark:text-ent-text-muted-dark"
-                  }`}>
+                  <span className={`text-sm font-body ${pkg.featured ? "text-white/80" : "text-ent-text-muted dark:text-ent-text-muted-dark"
+                    }`}>
                     {f}
                   </span>
                 </li>
@@ -185,11 +174,10 @@ const HomePackages = () => (
             {/* CTA */}
             <Link
               href="/contact"
-              className={`mt-2 block text-center font-bold py-3.5 px-6 rounded-2xl transition-colors no-underline font-body text-sm ${
-                pkg.featured
-                  ? "bg-ent-secondary hover:bg-ent-secondary/90 text-white"
-                  : "border border-ent-text/30 dark:border-white/20 text-ent-text dark:text-ent-text-dark hover:bg-ent-primary/5 dark:hover:bg-white/5"
-              }`}
+              className={`mt-2 block text-center font-bold py-3.5 px-6 rounded-2xl transition-colors no-underline font-body text-sm ${pkg.featured
+                ? "bg-ent-secondary hover:bg-ent-secondary/90 text-white"
+                : "border border-ent-text/30 dark:border-white/20 text-ent-text dark:text-ent-text-dark hover:bg-ent-primary/5 dark:hover:bg-white/5"
+                }`}
             >
               {pkg.cta}
             </Link>

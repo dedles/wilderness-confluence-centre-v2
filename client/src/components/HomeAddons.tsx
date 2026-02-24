@@ -3,8 +3,7 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const ADDONS = [
   "Guided Meditation",
-  // "Forest Bathing",
-  // "Stargazing",
+  "Glamping Tents",
   "Live Acoustic Music",
   "Evening Campfire",
   "Permaculture Tour",
@@ -22,9 +21,6 @@ const HomeAddons = () => (
         className="flex flex-col md:flex-row md:items-center gap-8"
       >
         <motion.div variants={fadeInUp} className="md:w-56 shrink-0">
-          <p className="text-sm uppercase tracking-widest text-ent-secondary font-bold mb-2">
-            Extras
-          </p>
           <h3 className="font-display text-2xl text-ent-text dark:text-ent-text-dark">
             Curated Add-ons
           </h3>

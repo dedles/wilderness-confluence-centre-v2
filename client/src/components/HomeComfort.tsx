@@ -6,12 +6,12 @@ const FEATURES = [
   {
     icon: Tent,
     title: "Campsite & Grounds",
-    body: "Private camp sites in established, well-maintained tent platforms nestled among towering old-growth cedars.",
+    body: "Private camp sites in established, well-maintained tent platforms nestled among towering fir and arbutus.",
   },
   {
     icon: UtensilsCrossed,
     title: "Catered Meals",
-    body: "Farm-to-table meals sourced locally from Salt Spring Island's renowned farms and artisan producers.",
+    body: "Farm-to-table meals sourced locally from Salt Spring Island's many organic farms.",
   },
   {
     icon: Sunrise,
@@ -21,7 +21,7 @@ const FEATURES = [
   {
     icon: TreePine,
     title: "Guided Land Experiences",
-    body: "From forest bathing to challenging hikes, our guided outdoor experiences are tailored to your group's goals and interests.",
+    body: "From guided meditations to challenging hikes, our guided outdoor experiences are tailored to your group's goals and interests.",
   },
 ];
 
