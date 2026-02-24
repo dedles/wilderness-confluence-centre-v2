@@ -54,9 +54,12 @@ const Navbar = () => {
           {/* Wordmark */}
           <Link
             href="/"
-            className="font-display text-lg font-semibold tracking-tight text-white no-underline hover:text-ent-sage transition-colors leading-tight"
+            className="flex items-center gap-2.5 no-underline hover:opacity-90 transition-opacity"
           >
-            Wilderness Confluence Centre
+            <img src="/images/wcc-logo.png" alt="" className="h-9 w-9 object-contain" />
+            <span className="font-display text-lg font-semibold tracking-tight text-white leading-tight">
+              Wilderness Confluence Centre
+            </span>
           </Link>
 
           {/* Mobile controls */}

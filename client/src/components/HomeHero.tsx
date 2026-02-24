@@ -38,14 +38,15 @@ const HomeHero = () => {
       </div>
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20">
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
+        <motion.img
+          src="/images/wcc-logo.png"
+          alt="Wilderness Confluence Centre"
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-sm uppercase tracking-widest text-ent-secondary font-bold mb-6"
-        >
-          Salt Spring Island, BC
-        </motion.p>
+          className="h-24 w-24 object-contain mx-auto mb-6 rounded-2xl"
+          style={{ filter: "brightness(1.1) drop-shadow(0 4px 24px rgba(255,255,255,0.45))" }}
+        />
 
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
