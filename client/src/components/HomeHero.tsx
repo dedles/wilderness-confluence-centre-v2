@@ -53,7 +53,7 @@ const HomeHero = () => {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="font-display text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight"
         >
-          Where Your Retreat Finds Its Home (v2)
+          Where Your Retreat Finds Its Home
         </motion.h1>
 
         <motion.p

@@ -90,12 +90,12 @@ const Footer = () => {
               Contact
             </h4>
             <ul className="space-y-3 text-sm text-white/50">
-              <li>Salt Spring Island, BC, Canada</li>
               <li>
                 <Link href="/contact" className={`${linkClass} no-underline text-inherit`}>
                   Plan Your Retreat
                 </Link>
               </li>
+              <li>Salt Spring Island, BC, Canada</li>
             </ul>
           </div>
 

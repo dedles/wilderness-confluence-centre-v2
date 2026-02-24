@@ -24,9 +24,8 @@ function GalleryGrid({
         return (
           <div
             key={index}
-            className={`relative group rounded-2xl overflow-hidden shadow-md cursor-pointer ${
-              isWide ? "md:col-span-2" : ""
-            }`}
+            className={`relative group rounded-2xl overflow-hidden shadow-md cursor-pointer ${isWide ? "md:col-span-2" : ""
+              }`}
             onClick={() => onOpen(index)}
           >
             <img
@@ -154,7 +153,7 @@ export default function GalleryPage() {
         <section className="py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-display text-4xl md:text-5xl text-ent-text dark:text-ent-text-dark mb-12 text-center">
-              Salt Spring
+              Salt Spring Island
             </h2>
             <GalleryGrid images={saltSpringImages} onOpen={(i) => openModal("saltspring", i)} />
           </div>
