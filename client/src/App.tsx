@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { Analytics } from "@vercel/analytics/react";
 
 function ScrollToTopOnNavigate() {
   const [location] = useLocation();
@@ -59,6 +60,7 @@ function App() {
         <Router />
         <ScrollToTop />
         <Toaster />
+        <Analytics />
       </ThemeProvider>
     </QueryClientProvider>
   );
