@@ -2,10 +2,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle, Home } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 
 export default function NotFound() {
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-sage-50 to-white">
+      <SEO title="Page Not Found | Wilderness Confluence Centre" noIndex />
       <Card className="w-full max-w-md mx-4 border-sage-200 shadow-lg">
         <CardContent className="pt-6 pb-6">
           <div className="flex flex-col items-center text-center mb-6">

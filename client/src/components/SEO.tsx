@@ -7,6 +7,7 @@ interface SEOProps {
   keywords?: string;
   image?: string;
   type?: string;
+  noIndex?: boolean;
 }
 
 const SEO = ({
@@ -14,7 +15,8 @@ const SEO = ({
   description = "A forested retreat venue on Salt Spring Island for facilitators, retreat leaders, and corporate teams. You bring the vision — we provide the land, the meals, and the magic.",
   keywords = "retreat venue Salt Spring Island, forest retreat BC, nature retreat venue, facilitator venue BC, corporate retreat",
   image = "https://www.wildernessconfluence.ca/images/gallery/morning_sunrise_landscape.jpg",
-  type = "website"
+  type = "website",
+  noIndex = false
 }: SEOProps) => {
   const [location] = useLocation();
   const currentUrl = `https://www.wildernessconfluence.ca${location}`;
@@ -61,7 +63,10 @@ const SEO = ({
     updateMetaTag('twitter:url', currentUrl, true);
     updateMetaTag('twitter:image', image, true);
 
-  }, [title, description, keywords, image, type, currentUrl]);
+    // Robots
+    updateMetaTag('robots', noIndex ? 'noindex, follow' : 'index, follow');
+
+  }, [title, description, keywords, image, type, currentUrl, noIndex]);
 
   return null;
 };
