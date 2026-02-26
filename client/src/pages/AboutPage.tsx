@@ -17,7 +17,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative h-[55vh] w-full overflow-hidden">
         <img
-          src="/images/gallery/arbutus_rocks_overcast_outlook.jpg"
+          src="/images/gallery/grounds/view3.jpg"
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: "center 70%" }}
@@ -38,7 +38,7 @@ export default function AboutPage() {
             transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="font-display text-5xl md:text-6xl text-cream leading-tight"
           >
-            About Confluence
+            About the Wilderness <br /> Confluence Centre
           </motion.h1>
         </div>
       </section>
@@ -54,7 +54,7 @@ export default function AboutPage() {
             className="space-y-7"
           >
             <motion.p variants={fadeInUp} className={paraClass}>
-              Confluence is situated on{" "}
+              The Wilderness Confluence Centre is situated on{" "}
               <a href="https://www.entelechysaltspring.ca/" target="_blank" rel="noopener noreferrer" className={linkClass}>
                 an eco-village
               </a>{" "}
@@ -100,22 +100,22 @@ export default function AboutPage() {
       <section className="pb-24 px-6 bg-warm-white dark:bg-ent-bg-dark transition-colors">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
           <div className="rounded-2xl overflow-hidden aspect-square">
-            <img src="/images/gallery/sunny_mossy_forest_clearing.jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img src="/images/gallery/grounds/sunny_day_vibrant_greenery.jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
           </div>
           <div className="rounded-2xl overflow-hidden aspect-square">
-            <img src="/images/gallery/fire_circle_benches_dusk.jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img src="/images/gallery/grounds/outdoor_dining2.jpeg" alt="" className="w-full h-full object-cover" loading="lazy" />
           </div>
           <div className="rounded-2xl overflow-hidden aspect-square">
-            <img src="/images/gallery/tent_interior_forest_view.jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img src="/images/gallery/spaces/tent_house_interior.jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
           </div>
           <div className="rounded-2xl overflow-hidden aspect-square">
-            <img src="/images/gallery/forest_sunset_canopy.jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img src="/images/gallery/grounds/sunset.jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
           </div>
           <div className="rounded-2xl overflow-hidden aspect-square">
-            <img src="/images/gallery/morning_light_newly_planted.jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img src="/images/gallery/grounds/morning_light_newly_planted.jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
           </div>
           <div className="rounded-2xl overflow-hidden aspect-square">
-            <img src="/images/gallery/sunset_hilltop_forest_vista.jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img src="/images/gallery/grounds/view2.jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
       </section>

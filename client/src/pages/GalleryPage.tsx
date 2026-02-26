@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import { ArrowDown, ChevronLeft, ChevronRight, X } from "lucide-react";
 import SEO from "../components/SEO";
-import { saltSpringImages, groundsImages, GalleryImage } from "../lib/GalleryData";
-
-type ActiveGallery = "grounds" | "saltspring";
+import { gallerySections, GalleryImage } from "../lib/GalleryData";
 
 interface LightboxState {
-  gallery: ActiveGallery;
+  sectionKey: string;
   index: number;
 }
 
@@ -47,10 +45,12 @@ function GalleryGrid({
 export default function GalleryPage() {
   const [lightbox, setLightbox] = useState<LightboxState | null>(null);
 
-  const activeImages = lightbox?.gallery === "saltspring" ? saltSpringImages : groundsImages;
+  const activeImages = lightbox
+    ? (gallerySections.find((s) => s.key === lightbox.sectionKey)?.images ?? [])
+    : [];
 
-  const openModal = (gallery: ActiveGallery, index: number) => {
-    setLightbox({ gallery, index });
+  const openModal = (sectionKey: string, index: number) => {
+    setLightbox({ sectionKey, index });
     document.body.style.overflow = "hidden";
   };
 
@@ -134,74 +134,84 @@ export default function GalleryPage() {
         id="gallery-grid"
         className="bg-ent-bg-light dark:bg-ent-bg-dark transition-colors"
       >
-        {/* The Grounds */}
-        <section className="py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-display text-4xl md:text-5xl text-ent-text dark:text-ent-text-dark mb-12 text-center">
-              The Grounds of the Confluence Centre
-            </h2>
-            <GalleryGrid images={groundsImages} onOpen={(i) => openModal("grounds", i)} />
-          </div>
-        </section>
+        {gallerySections.map((section, i) => (
+          <>
+            <section key={section.key} className="py-24">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 className="font-display text-4xl md:text-5xl text-ent-text dark:text-ent-text-dark mb-12 text-center">
+                  {section.title}
+                </h2>
+                <GalleryGrid
+                  images={section.images}
+                  onOpen={(idx) => openModal(section.key, idx)}
+                />
+              </div>
+            </section>
 
-        {/* Divider */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <hr className="border-ent-primary/10 dark:border-white/10" />
-        </div>
+            {i < gallerySections.length - 1 && (
+              <div key={`divider-${section.key}`} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <hr className="border-ent-primary/10 dark:border-white/10" />
+              </div>
+            )}
+          </>
+        ))}
 
-        {/* Salt Spring */}
-        <section className="py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-display text-4xl md:text-5xl text-ent-text dark:text-ent-text-dark mb-12 text-center">
-              Salt Spring Island
-            </h2>
-            <GalleryGrid images={saltSpringImages} onOpen={(i) => openModal("saltspring", i)} />
-          </div>
-        </section>
       </div>
 
       {/* Lightbox */}
       {lightbox && (
         <div
-          className="fixed inset-0 bg-black/92 z-[1001] flex items-center justify-center"
+          className="fixed inset-0 bg-black/90 z-[1001] flex items-center justify-center"
           onClick={closeModal}
         >
+          {/* Close button — fixed to viewport top-right */}
           <button
             onClick={closeModal}
-            className="fixed top-4 right-4 w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white z-[1003] transition-colors"
+            className="fixed top-4 right-4 w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors z-[1003]"
             aria-label="Close gallery"
           >
-            <X size={24} />
+            <X size={18} />
           </button>
+
+          {/* Prev arrow — fixed to viewport left edge */}
+          <button
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+            className="fixed left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center text-white/70 hover:text-white transition-colors z-[1002]"
+            aria-label="Previous image"
+          >
+            <ChevronLeft size={28} />
+          </button>
+
+          {/* Image panel */}
           <div
-            className="relative w-[90%] max-w-[1200px] h-[80vh]"
+            className="relative w-[55%] max-w-[1200px]"
             onClick={(e) => e.stopPropagation()}
           >
             <img
               src={activeImages[lightbox.index]?.src || ""}
               alt={activeImages[lightbox.index]?.caption || ""}
-              className="max-w-full max-h-full object-contain mx-auto block"
+              className="w-full max-h-[78vh] object-contain block"
             />
-            <div className="absolute bottom-5 left-0 w-full bg-black/70 text-white p-4 text-center font-body text-sm">
-              {activeImages[lightbox.index]?.caption || ""}
-            </div>
-            <div className="absolute top-1/2 w-full flex justify-between px-5 -translate-y-1/2 z-[1002]">
-              <button
-                onClick={prev}
-                className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
-                aria-label="Previous image"
-              >
-                <ChevronLeft size={24} />
-              </button>
-              <button
-                onClick={next}
-                className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
-                aria-label="Next image"
-              >
-                <ChevronRight size={24} />
-              </button>
+
+            {/* Caption + counter */}
+            <div className="flex justify-between items-center pt-3 text-white/80">
+              <span className="font-body text-sm italic">
+                {activeImages[lightbox.index]?.caption || ""}
+              </span>
+              <span className="font-body text-sm text-white/50 ml-6 shrink-0">
+                {lightbox.index + 1} / {activeImages.length}
+              </span>
             </div>
           </div>
+
+          {/* Next arrow — fixed to viewport right edge */}
+          <button
+            onClick={(e) => { e.stopPropagation(); next(); }}
+            className="fixed right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center text-white/70 hover:text-white transition-colors z-[1002]"
+            aria-label="Next image"
+          >
+            <ChevronRight size={28} />
+          </button>
         </div>
       )}
     </>

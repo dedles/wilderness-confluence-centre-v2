@@ -5,7 +5,7 @@ const HomeLandscape = () => (
     id="the-land"
     className="relative py-40 md:py-56 bg-cover bg-center bg-fixed"
     style={{
-      backgroundImage: "url('/images/gallery/sunny_mossy_forest_clearing.jpg')",
+      backgroundImage: "url('/images/gallery/grounds/sunny_day_vibrant_greenery.jpg')",
     }}
   >
     <div className="absolute inset-0 bg-moss/60 dark:bg-moss/70" />

@@ -30,7 +30,7 @@ const HomeHero = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <motion.img
-          // src="/images/gallery/morning_sunrise_landscape.jpg"
+          // src="/images/gallery/grounds/morning_sunrise_landscape.jpg"
           src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80"
           alt="Forested landscape on Salt Spring Island"
           className="w-full object-cover absolute inset-0"

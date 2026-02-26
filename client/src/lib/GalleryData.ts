@@ -3,38 +3,76 @@ export interface GalleryImage {
   caption: string;
 }
 
-export const saltSpringImages: GalleryImage[] = [
-  { src: "/images/stock/misty_forest_morning_light_rays.jpg", caption: "Misty morning light through the forest" },
-  { src: "/images/stock/dark_oldgrowth_ferns_light_shafts.jpg", caption: "Old-growth forest with ferns" },
-  { src: "/images/stock/oldgrowth_moss_lichen_forest.jpg", caption: "Moss and lichen-draped old-growth trees" },
-  { src: "/images/stock/conifer_forest_mossy_ground_mist.jpg", caption: "Conifer forest in the morning mist" },
-  { src: "/images/stock/rocky_shore_cove_through_trees.jpg", caption: "Rocky shoreline cove through the trees" },
-  { src: "/images/stock/ganges_harbour_sailboats_overcast.jpg", caption: "Ganges Harbour" },
-  { src: "/images/stock/ganges_saturday_market.jpg", caption: "Ganges Saturday Market" },
-  { src: "/images/stock/saltspring_island_fire_hall.jpg", caption: "Salt Spring Island Fire Hall" },
+export interface GallerySection {
+  title: string;
+  key: string;
+  images: GalleryImage[];
+}
+
+export const gallerySections: GallerySection[] = [
+  {
+    title: "The Grounds",
+    key: "grounds",
+    images: [
+      { src: "/images/gallery/grounds/morning_sunrise_landscape.jpg", caption: "Morning sunrise over the land" },
+      { src: "/images/gallery/grounds/sunny_day_vibrant_greenery.jpg", caption: "Summer wildflowers on the hillside" },
+      { src: "/images/gallery/grounds/rainbow_over_trees.jpg", caption: "Rainbow over the trees" },
+      { src: "/images/gallery/grounds/outdoor_campfire.jpg", caption: "Campfire gathering" },
+      { src: "/images/gallery/grounds/outdoor_sitting_area.jpg", caption: "Outdoor sitting area" },
+      { src: "/images/gallery/grounds/outdoor_dining2.jpeg", caption: "Outdoor dining on the land" },
+      { src: "/images/gallery/grounds/morning_light_newly_planted.jpg", caption: "Foxgloves in the meadow" },
+      { src: "/images/gallery/grounds/sunset.jpg", caption: "Sunset over the land" },
+      { src: "/images/gallery/grounds/forest_path.jpeg", caption: "Forest path through the property" },
+      { src: "/images/gallery/grounds/view.jpeg", caption: "Views from the land" },
+      { src: "/images/gallery/grounds/view2.jpg", caption: "Views from the property" },
+      { src: "/images/gallery/grounds/view3.jpg", caption: "Views across the island" },
+      { src: "/images/gallery/grounds/cat.jpeg", caption: "One of our local cats" },
+    ],
+  },
+  {
+    title: "Our Farm",
+    key: "farm",
+    images: [
+      { src: "/images/gallery/farm/garden_flowers.jpg", caption: "Vibrant flowers from our gardens" },
+      { src: "/images/gallery/farm/garden_harvest1.jpg", caption: "Garden harvest" },
+      { src: "/images/gallery/farm/garden_harvest2.jpg", caption: "Garden harvest" },
+      { src: "/images/gallery/farm/farm0.jpg", caption: "The farm" },
+      { src: "/images/gallery/farm/farm2a.jpg", caption: "Growing season" },
+      { src: "/images/gallery/farm/farm3.jpg", caption: "Farm garden beds" },
+      { src: "/images/gallery/farm/farm4.jpg", caption: "Farm produce" },
+      { src: "/images/gallery/farm/farm5.jpg", caption: "Growing together" },
+      { src: "/images/gallery/farm/farm6.jpg", caption: "Farm work" },
+      { src: "/images/gallery/farm/farm7.jpg", caption: "Harvest season" },
+      { src: "/images/gallery/farm/farm8b.jpg", caption: "Farm in bloom" },
+      { src: "/images/gallery/farm/farm9.jpeg", caption: "The farm" },
+    ],
+  },
+  {
+    title: "Our Spaces",
+    key: "spaces",
+    images: [
+      { src: "/images/gallery/spaces/tent_house_interior.jpg", caption: "Tent house interior" },
+      { src: "/images/gallery/spaces/entelekitchen.jpg", caption: "The kitchen" },
+      { src: "/images/gallery/spaces/entelekitchen2.jpg", caption: "Kitchen and gathering space" },
+      { src: "/images/gallery/spaces/entelekitchen3.jpg", caption: "The kitchen at Entelechy" },
+      { src: "/images/gallery/spaces/outdoor_bath.jpeg", caption: "Outdoor bath facilities" },
+      { src: "/images/gallery/spaces/outhouse.jpg", caption: "Outhouse" },
+      { src: "/images/gallery/spaces/outhouse2.jpg", caption: "Outhouse" },
+      { src: "/images/gallery/spaces/outhouse3.jpg", caption: "Outhouse" },
+    ],
+  },
+  {
+    title: "On Salt Spring",
+    key: "stock",
+    images: [
+      { src: "/images/gallery/stock/misty_forest_morning_light_rays.jpg", caption: "Misty morning light through the forest" },
+      { src: "/images/gallery/stock/dark_oldgrowth_ferns_light_shafts.jpg", caption: "Old-growth forest with ferns" },
+      { src: "/images/gallery/stock/oldgrowth_moss_lichen_forest.jpg", caption: "Moss and lichen-draped old-growth trees" },
+      { src: "/images/gallery/stock/conifer_forest_mossy_ground_mist.jpg", caption: "Conifer forest in the morning mist" },
+      { src: "/images/gallery/stock/rocky_shore_cove_through_trees.jpg", caption: "Rocky shoreline cove through the trees" },
+      { src: "/images/gallery/stock/ganges_harbour_sailboats_overcast.jpg", caption: "Ganges Harbour" },
+      { src: "/images/gallery/stock/ganges_saturday_market.jpg", caption: "Ganges Saturday Market" },
+      { src: "/images/gallery/stock/saltspring_island_fire_hall.jpg", caption: "Salt Spring Island Fire Hall" },
+    ],
+  },
 ];
-
-export const groundsImages: GalleryImage[] = [
-  { src: "/images/gallery/morning_sunrise_landscape.jpg", caption: "Morning sunrise over the land" },
-  { src: "/images/gallery/fire_circle_benches_dusk.jpg", caption: "Fire circle at dusk" },
-  { src: "/images/gallery/sunny_mossy_forest_clearing.jpg", caption: "Sunny mossy clearing in the forest" },
-  { src: "/images/gallery/sunset_hilltop_forest_vista.jpg", caption: "Sunset from the hilltop vista" },
-  { src: "/images/gallery/arbutus_rocks_overcast_outlook.jpg", caption: "Arbutus trees and mossy rock outlook" },
-  { src: "/images/gallery/forest_sunset_canopy.jpg", caption: "Sunset through the forest canopy" },
-  { src: "/images/gallery/tent_interior_forest_view.jpg", caption: "View from inside the tent accommodation" },
-  { src: "/images/gallery/tent_house_interior.jpg", caption: "Tent house interior" },
-  { src: "/images/gallery/forest_path_arbutus_tent_platform.jpg", caption: "Forest path to the tent platform" },
-  { src: "/images/gallery/outdoor_sitting_area.jpg", caption: "Outdoor sitting area" },
-  { src: "/images/gallery/outdoor_campfire.jpg", caption: "Campfire gathering" },
-  { src: "/images/gallery/garden_late-season.jpg", caption: "The kitchen garden in late season" },
-  { src: "/images/gallery/garden_harvest1.jpg", caption: "Garden harvest" },
-  { src: "/images/gallery/morning_light_newly_planted.jpg", caption: "Foxgloves in the meadow" },
-  { src: "/images/gallery/sunny_day_vibrant_greenery.jpg", caption: "Summer wildflowers on the hillside" },
-  { src: "/images/gallery/rainbow_over_trees.jpg", caption: "Rainbow over the trees" },
-];
-
-// Used on the home page
-export const homePageGallery = groundsImages.slice(0, 5);
-
-// Legacy export for any existing references
-export const galleryImages = [...groundsImages, ...saltSpringImages];
