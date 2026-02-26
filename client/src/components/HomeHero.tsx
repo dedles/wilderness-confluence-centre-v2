@@ -1,11 +1,13 @@
 // import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { Link, useSearch } from "wouter";
 import { ChevronDown } from "lucide-react";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 
 const HomeHero = () => {
+  const search = useSearch();
+  const fromEntelechy = new URLSearchParams(search).get("from_entelechy") === "true";
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -63,7 +65,7 @@ const HomeHero = () => {
           transition={{ duration: 0.7, delay: 0.35 }}
           className="text-lg md:text-xl text-white/80 mb-10 font-body max-w-2xl mx-auto leading-relaxed"
         >
-          A forested venue on Salt Spring Island for facilitators, retreat leaders, and teams.
+          {fromEntelechy ? "A forested venue on the grounds of Entelechy" : "A forested venue on Salt Spring Island"} for facilitators, retreat leaders, and teams.
           You bring the vision — we provide the land, the meals, and the magic.
         </motion.p>
 
