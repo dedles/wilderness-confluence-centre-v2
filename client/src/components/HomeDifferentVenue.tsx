@@ -41,7 +41,7 @@ const HomeDifferentVenue = () => (
             stepping into a living landscape. The forest does half the work — slowing people
             down, opening them up, creating the conditions for whatever transformation your
             program is designed to offer. Whether you're leading a tea ceremony, a
-            permaculture intensive, a men's circle, or a company offsite, this land holds it.
+            permaculture intensive, a men's circle, or a company seeking a genuine analog offsite, this land holds it.
           </p>
         </motion.div>
       </motion.div>
