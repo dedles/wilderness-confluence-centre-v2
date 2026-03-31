@@ -60,6 +60,7 @@ This is a full-stack React application for the Entelechy intentional community w
 
 The project uses a single port (5000) for both API and client serving. In development, Vite dev server is integrated with Express. In production, Express serves static files from the built client.
 
+
 ## Styling
 
 The project uses Tailwind CSS with a custom theme focused on nature-inspired colors for the intentional community brand. Custom CSS variables and a dark mode implementation are integrated with the Tailwind theme system.
